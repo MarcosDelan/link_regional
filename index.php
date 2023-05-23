@@ -16,18 +16,18 @@
   <!---->
     <!-- Inicio Menu -->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-<a class="navbar-brand" href="#"><img src="imagens/logo-site.png" alt="Link Regional" width="30" height="24"></a>
+<a class="navbar-brand" href="#">LINK REGIONAL</a>
   
   <!--
   <a class="navbar-brand" href="#">Navbar</a>
 -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-    <ul class="navbar-nav mr-auto">
+  <div class="collapse navbar-collapse d-flex justify-content-end" id="conteudoNavbarSuportado">
+    <ul class="navbar-nav mr-2">
       <li class="nav-item active">
         <a class="nav-link" href="index.php">Home <span class="sr-only"></span></a>
       </li>
@@ -39,7 +39,7 @@
           Área Admin
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="cadastra_cliente">Cadastra Novo Cliente</a>
+          <a class="dropdown-item" href="cadastra_cliente.php">Cadastra Novo Cliente</a>
           <a class="dropdown-item" href="listar.php">Lista de Clientes</a>
       <!--<a class="dropdown-item" href="listar.php">Listar Clientes</a> -->
         </div>
@@ -115,13 +115,13 @@
     <!-- Fim Carrossel -->
 
     <h1>Pesquisa Cliente</h1>
-
+    <div id="formulario">
     <form method="POST" action="">
         <label>Nome: </label>
         <input type="text" name="nome" placeholder="Digite o nome"><br /><br />
       
-        <input name="SendPesqClient" type="submit" value="Pesquisar">
-    </form><br /><br />
+        <input name="SendPesqClient" type="submit">
+    </form><br /><br /></div>
 
     <?php
       $SendPesqClient = filter_input(INPUT_POST, 'SendPesqClient', FILTER_SANITIZE_STRING);

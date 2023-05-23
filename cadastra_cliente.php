@@ -19,16 +19,16 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-<a class="navbar-brand" href="#"><img src="imagens/logo-site.png" alt="Link Regional" width="30" height="24"></a>
+<a class="navbar-brand" href="#">LINK REGIONAL</a>
   
   <!--
   <a class="navbar-brand" href="#">Navbar</a>
 -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-    <ul class="navbar-nav mr-auto">
+  <div class="collapse navbar-collapse d-flex justify-content-end" id="conteudoNavbarSuportado">
+    <ul class="navbar-nav mr-2">
       <li class="nav-item active">
         <a class="nav-link" href="index.php">Home <span class="sr-only"></span></a>
       </li>
@@ -40,7 +40,7 @@
           Área Admin
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="cadastra_cliente">Cadastra Novo Cliente</a>
+          <a class="dropdown-item" href="cadastra_cliente.php">Cadastra Novo Cliente</a>
           <a class="dropdown-item" href="listar.php">Lista de Clientes</a>
       <!--<a class="dropdown-item" href="listar.php">Listar Clientes</a> -->
         </div>
@@ -65,48 +65,58 @@
             unset($_SESSION['msg']);
         }    
     ?>
+    <div id="formulario">
+      <form method="POST" action="processa.php">
+          <div class="style-form-input full">
+            <input type="text" name="nome" placeholder="Nome completo:" required><br /><br />
+          </div>
+          
+          <div class="style-form-input full">
+            <input type="text" name="nempresa" placeholder="Nome da Empresa:" required><br /><br />
+          </div>
 
-    <form method="POST" action="processa.php">
-        <label>Nome: </label>
-        <input type="text" name="nome" placeholder="Digite o nome completo" required><br /><br />
+          <div class="style-form-input full">
+            <input type="text" name="cpf" placeholder="CPF:" required><br /><br />
+          </div>
+          
+          <div class="style-form-input full">
+            <input type="text" name="email" placeholder="E-mail:" required><br /><br />
+          </div>
 
-        <label>Nome da Empresa: </label>
-        <input type="text" name="nempresa" placeholder="Digite o nome da Empresa" required><br /><br />
+          <div class="style-form-input full">
+            <input type="text" name="site" placeholder="Site:"><br /><br />
+          </div>
 
-        <label>CPF: </label>
-        <input type="text" name="cpf" placeholder="Digite o CPF" required><br /><br />
-        
-        <label>E-mail: </label>
-        <input type="text" name="email" placeholder="Digite o seu melhor E-mail" required><br /><br />
+          <div class="style-form-input full">
+            <input type="text" name="contato" placeholder="Contato:" required><br /><br />
+          </div>
 
-        <label>Site: </label>
-        <input type="text" name="site" placeholder="Tem Site? Coloca o endereço"><br /><br />
+          <div class="style-form-input full">
+            <input type="text" name="endereco" placeholder="Endereço:"><br /><br />
+          </div>
 
-        <label>Contato: </label>
-        <input type="text" name="contato" placeholder="Digite o seu contato" required><br /><br />
+          <div class="style-form-input full">
+            <input type="text" name="cidade" placeholder="Cidade:"><br /><br />
+          </div>
 
-        <label>Endereço: </label>
-        <input type="text" name="endereco" placeholder="Digite seu endereço"><br /><br />
+          <div class="style-form-input full">
+            <input type="text" name="estado" placeholder="Estado:"><br /><br />
+          </div>
 
-        <label>Cidade: </label>
-        <input type="text" name="cidade" placeholder="Informe a sua Cidade"><br /><br />
+          <div class="style-form-input full">
+            <input type="text" name="categoria" placeholder="Tipo de serviço:"><br /><br />
+          </div>
 
-        <label>Estado: </label>
-        <input type="text" name="estado" placeholder="Informe o seu Estado"><br /><br />
-
-        <label>Categoria: </label>
-        <input type="text" name="categoria" placeholder="Digite a categoria do Serviço ex: Serviço"><br /><br />
-        
-        <label>Classificação: </label>
-        <input type="text" name="classificacao" placeholder="Digite uma pontuação ex:0.0 até 10.0"><br /><br />
-
-        <!-- 
-        <label>Nome da imagem do Cartão: </label>
-        <input type="text" name="imagem_cartao" placeholder="Nome do arquivo da imagem Formato jpg"><br /><br />
-        -->
-
-        <input type="submit" value="Cadastrar">
-    </form>
+          <div class="style-form-input full">
+            <input type="text" name="classificacao" placeholder="Classificação 0.0 até 10.0:"><br /><br />
+          </div>
+          <!-- 
+          <label>Nome da imagem do Cartão: </label>
+          <input type="text" name="imagem_cartao" placeholder="Nome do arquivo da imagem Formato jpg"><br /><br />
+          -->
+            <button type="submit"> Cadastrar </button>
+      </form>
+    </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

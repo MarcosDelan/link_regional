@@ -22,20 +22,20 @@
   <!---->
     <!-- Inicio Menu -->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-<a class="navbar-brand" href="#"><img src="imagens/logo-site.png" alt="Link Regional" width="30" height="24"></a>
+<a class="navbar-brand" href="#">LINK REGIONAL</a>
   
   <!--
   <a class="navbar-brand" href="#">Navbar</a>
 -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-    <ul class="navbar-nav mr-auto">
+  <div class="collapse navbar-collapse d-flex justify-content-end" id="conteudoNavbarSuportado">
+    <ul class="navbar-nav mr-2">
       <li class="nav-item active">
-        <a class="nav-link" href="index.php">Home <span class="sr-only">(página atual)</span></a>
+        <a class="nav-link" href="index.php">Home <span class="sr-only"></span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Contato</a>
@@ -45,7 +45,7 @@
           Área Admin
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="cadastra_cliente">Cadastra Novo Cliente</a>
+          <a class="dropdown-item" href="cadastra_cliente.php">Cadastra Novo Cliente</a>
           <a class="dropdown-item" href="listar.php">Lista de Clientes</a>
       <!--<a class="dropdown-item" href="listar.php">Listar Clientes</a> -->
         </div>
@@ -71,6 +71,7 @@
         }    
     ?>
 
+    <div id="formulario">
     <form method="POST" action="proc_edit_cliente.php">
         <label>Nome: </label>
         <input type="hidden" name="id" 
@@ -123,8 +124,9 @@
         <input type="text" name="imagem_cartao" placeholder="Nome do arquivo da imagem Formato jpg"
             value="<?php echo $row_cliente['imagem_cartao']; ?>"><br /><br />
 
-        <input type="submit" value="Editar">
+            <button type="submit"> Editar </button>
     </form>
+      </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

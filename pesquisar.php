@@ -40,7 +40,7 @@
           Área Admin
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="cadastra_cliente">Cadastra Novo Cliente</a>
+          <a class="dropdown-item" href="cadastra_cliente.php">Cadastra Novo Cliente</a>
           <a class="dropdown-item" href="listar.php">Lista de Clientes</a>
       <!--<a class="dropdown-item" href="listar.php">Listar Clientes</a> -->
         </div>
@@ -55,16 +55,20 @@
     </form>-->
   </div>
 </nav>
-
     <!-- Fim Menu -->
     <h1>Pesquisa Cliente</h1>
+
+    <div id="formulario">
 
     <form method="POST" action="">
         <label>Nome: </label>
         <input type="text" name="nome" placeholder="Digite o nome"><br /><br />
       
-        <input name="SendPesqClient" type="submit" value="Pesquisar">
-    </form><br /><br />
+        <button name="SendPesqClient" type="submit" value="Pesquisar">Pesquisar</button>
+      </form>
+    </div>
+
+    <div id="formulario">
 
     <?php
       $SendPesqClient = filter_input(INPUT_POST, 'SendPesqClient', FILTER_SANITIZE_STRING);
@@ -73,15 +77,17 @@
         $result_cliente = "SELECT * FROM cliente WHERE nempresa LIKE '%$nempresa%'";
         $resultado_cliente = mysqli_query($conn, $result_cliente);
         while ($row_cliente = mysqli_fetch_assoc($resultado_cliente)) {
-          echo "ID: " . $row_cliente['id'] . "<br>";
-          echo "Nome da Empresa: " . $row_cliente['nempresa'] . "<br>";
-          echo "Contato: " . $row_cliente['contato'] . "<br>";
-          
-          echo "<a href='edit_cliente.php?id=" . $row_cliente['id'] . "'>Editar</a><br/>";
-          echo "<a href='proc_apagar_cliente.php?id=" . $row_cliente['id'] . "'>Apagar</a><br/><hr>";
-        }
+            echo "<div id='cliente'><p> ID: " . $row_cliente['id'] . "</p>";
+            echo "<p>Nome da Empresa: " . $row_cliente['nempresa'] . "</p>";
+            echo "<p>Contato: " . $row_cliente['contato'] . "</p>";
+            echo "<div id='button'></br>";
+            echo "<a class='buttonStyle' href='edit_cliente.php?id=" . $row_cliente['id'] . "'>Editar</a><br/>";
+            echo "<a class='buttonStyle' href='proc_apagar_cliente.php?id=" . $row_cliente['id'] . "'>Apagar</a><br/></div></div>";
+          }
       }
     ?>
+        
+    </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
